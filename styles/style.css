@@ -1,0 +1,22 @@
+/* styles/themes.css */
+:root {
+    /* Modo claro */
+    --background-light: #fafafa;
+    --text-light: #0c0918;
+    --primary-color-light: #463beb;
+    --secondary-color-light: #eda71a;
+    --income-color-light: #128c5b;
+    --expenses-color-light: #db2c2c;
+    --font-general: "Urbanist", sans-serif;
+    --font-featured: "Anton", sans-serif;
+}
+
+.dark-mode {
+    /* Modo oscuro */
+    --background-light: #0c0918;
+    --text-light: #fafafa;
+    --primary-color-light: #463beb;
+    --secondary-color-light: #eda71a;
+    --income-color-light: #128c5b;
+    --expenses-color-light: #db2c2c;
+}
