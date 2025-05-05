@@ -1,12 +1,11 @@
 <script setup>
-import { useTheme } from "~/composables/useTheme";
-const { theme, toggleTheme } = useTheme();
+import ThemeToggle from './ThemeToggle.vue';
+
+
 </script>
 
 <template>
   <nav>
-    <button @click="toggleTheme">
-      Cambiar a {{ theme === "light" ? "oscuro" : "claro" }}
-    </button>
+  <ThemeToggle />    
   </nav>
 </template>
