@@ -8,19 +8,20 @@
 <style scoped>
 .loader {
   height: 2px;
-  width: 300px;
-  background: rgb(44, 44, 44);
+  width: 90%;
+  background: var(--background-color);
   position: relative;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 .loader .black_overlay {
   background: linear-gradient(
     87deg,
-    rgb(0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.14) 30%,
-    rgba(0, 0, 0, 0.14) 70%,
-    rgb(0, 0, 0) 100%
+    rgb(var(--text-color-rgb), 0.14) 0%,
+    rgba(var(--text-color-rgb)) 30%,
+    rgba(var(--text-color-rgb)) 70%,
+    rgb(var(--text-color-rgb), 0.14) 100%
   );
   position: absolute;
   inset: 0px;
@@ -34,10 +35,10 @@
   top: 0px;
   background: linear-gradient(
     87deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgb(0, 204, 255) 40%,
-    rgb(0, 204, 255) 60%,
-    rgba(0, 0, 0, 0) 100%
+    var(--income-color) 0%,
+    var(--secondary-color) 40%,
+    var(--secondary-color) 60%,
+    var(--income-color) 100%
   );
   animation: light 2s infinite ease-in-out;
 }
