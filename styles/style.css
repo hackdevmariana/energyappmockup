@@ -1,26 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&family=Anton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&family=Anton&display=swap");
 
 :root {
-    /* Modo claro */
-    --background-color: #fafafa;
-    --text-color: #0c0918;
-    --primary-color: #463beb;
-    --secondary-color: #eda71a;
-    --income-color: #128c5b;
-    --expenses-color: #db2c2c;
-    --font-general: "Urbanist", sans-serif;
-    --font-featured: "Anton", sans-serif;
+  --background-color: #fafafa;
+  --text-color: #0c0918;
+  --primary-color: #463beb;
+  --secondary-color: #eda71a;
+  --income-color: #128c5b;
+  --expenses-color: #db2c2c;
+  --font-general: "Urbanist", sans-serif;
+  --font-featured: "Anton", sans-serif;
+  --text-color-rgb: 12, 9, 24;
 }
 
 .dark-mode {
-    /* Modo oscuro */
-    --background-color: #0c0918;
-    --text-color: #fafafa;
+  --background-color: #0c0918;
+  --text-color: #fafafa;
+  --primary-color: #463beb;
+  --secondary-color: #eda71a;
+  --income-color: #128c5b;
+  --expenses-color: #db2c2c;
+  --font-general: "Urbanist", sans-serif;
+  --font-featured: "Anton", sans-serif;
+  --text-color-rgb: 250, 250, 250;
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-general);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-general);
 }
-
