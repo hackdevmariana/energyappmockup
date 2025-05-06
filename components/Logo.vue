@@ -6,7 +6,8 @@ const config = useRuntimeConfig();
   <div class="shine">{{ config.public.appName }}</div>
 </template>
 
-<style scoped>
+<style>
+/* From Uiverse.io by devkatyall */ 
 .shine {
   font-size: 2em;
   font-weight: 900;
@@ -33,7 +34,6 @@ const config = useRuntimeConfig();
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
 }
-
 @-webkit-keyframes zezzz {
   0%,
   10% {
@@ -46,4 +46,5 @@ const config = useRuntimeConfig();
     background-position: 200px;
   }
 }
+
 </style>
