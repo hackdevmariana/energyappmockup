@@ -1,7 +1,12 @@
 <template>
   <div>
-    <h1>Bienvenido a EnergyAppMockup</h1>
-    <p>Esta es la página de inicio.</p>
+
+<br><br>
+    <AnimatedContainer
+  topLine="Saldo"
+  quantity="1000"
+  bottomLine="euros"
+/>
   </div>
 </template>
 
