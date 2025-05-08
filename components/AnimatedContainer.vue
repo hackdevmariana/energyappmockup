@@ -24,18 +24,20 @@
 defineProps({
   topLine: {
     type: String,
-    required: true
+    default: ""
   },
   quantity: {
     type: String,
-    required: true
+    default: ""
   },
   bottomLine: {
     type: String,
-    required: true
+    default: ""
   }
 });
 </script>
+
+
 
 <style scoped>
 .contenedor {
