@@ -7,8 +7,6 @@
   backgroundColor="var(--expenses-color)"
 />
 
-
-
 -->
 
 <template>
