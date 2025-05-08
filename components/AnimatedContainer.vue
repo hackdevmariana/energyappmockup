@@ -33,6 +33,10 @@ defineProps({
   bottomLine: {
     type: String,
     default: ""
+  },
+  backgroundColor: {
+    type: String,
+    default: "var(--background-color)" 
   }
 });
 </script>
@@ -53,6 +57,7 @@ defineProps({
   text-align: center;
   margin: 0 auto;
   border: 2px solid rgba(var(--text-color-rgb), 0.8);
+  background-color: v-bind(backgroundColor);
 }
 
 .top-line {
