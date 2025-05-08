@@ -4,7 +4,9 @@
   topLine="Saldo"
   quantity="1000"
   bottomLine="euros"
+  backgroundColor="var(--expenses-color)"
 />
+
 
 
 -->
