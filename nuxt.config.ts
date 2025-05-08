@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   }, // <- Aquí faltaba la coma
   modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/icon'],
   css: ["~/styles/style.css"],
+  plugins: [{ src: "~/plugins/vue-echarts", mode: "client" }],
   app: {
     head: {
       link: [
