@@ -9,7 +9,14 @@
     />
 
     <PowerGridStatus generation="120" consumption="110" stability="Estable" />
-
+    <RenewableEnergyMix
+      :data="[
+        { name: 'Solar', value: 45 },
+        { name: 'Eólica', value: 30 },
+        { name: 'Hidráulica', value: 15 },
+        { name: 'Biomasa', value: 10 },
+      ]"
+    />
     <ConsumptionHistoryChart
       :labels="['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio']"
       :consumption="[120, 135, 110, 145, 160, 155]"
@@ -75,6 +82,7 @@ import EnergySavingsChart from "~/components/EnergySavingsChart.vue";
 import EnergyConsumptionChart from "~/components/EnergyConsumptionChart.vue";
 import ConsumptionHistoryChart from "~/components/ConsumptionHistoryChart.vue";
 import PowerGridStatus from "~/components/PowerGridStatus.vue";
+import RenewableEnergyMix from "~/components/RenewableEnergyMix.vue";
 
 definePageMeta({
   layout: "default",

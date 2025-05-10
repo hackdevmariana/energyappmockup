@@ -1,3 +1,14 @@
+<!--
+<RenewableEnergyMix
+      :data="[
+        { name: 'Solar', value: 45 },
+        { name: 'Eólica', value: 30 },
+        { name: 'Hidráulica', value: 15 },
+        { name: 'Biomasa', value: 10 }
+      ]"
+    />
+-->
+
 <template>
   <div class="chart-container">
     <client-only>
