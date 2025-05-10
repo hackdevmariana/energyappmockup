@@ -8,6 +8,11 @@
       backgroundColor="var(--expenses-color)"
     />
 
+    <EnergyConsumptionChart
+      :labels="['00:00', '06:00', '12:00', '18:00', '24:00']"
+      :consumption="[0.4, 0.8, 1.2, 1.1, 0.5]"
+    />
+
     <h1>Consumo energético mensual</h1>
     <EnergyChart
       :labels="['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo']"
@@ -49,6 +54,7 @@
 import EnergyChart from "~/components/EnergyChart.vue";
 import EnergyDifferenceChart from "~/components/EnergyDifferenceChart.vue";
 import EnergySavingsChart from "~/components/EnergySavingsChart.vue";
+import EnergyConsumptionChart from "~/components/EnergyConsumptionChart.vue";
 
 definePageMeta({
   layout: "default",
