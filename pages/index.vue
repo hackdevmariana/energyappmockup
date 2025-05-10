@@ -8,6 +8,11 @@
       backgroundColor="var(--expenses-color)"
     />
 
+    <ConsumptionHistoryChart
+      :labels="['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio']"
+      :consumption="[120, 135, 110, 145, 160, 155]"
+    />
+
     <SelfConsumptionChart
       :data="[
         { name: 'Autoconsumo', value: 70 },
@@ -66,6 +71,7 @@ import EnergyChart from "~/components/EnergyChart.vue";
 import EnergyDifferenceChart from "~/components/EnergyDifferenceChart.vue";
 import EnergySavingsChart from "~/components/EnergySavingsChart.vue";
 import EnergyConsumptionChart from "~/components/EnergyConsumptionChart.vue";
+import ConsumptionHistoryChart from "~/components/ConsumptionHistoryChart.vue";
 
 definePageMeta({
   layout: "default",
