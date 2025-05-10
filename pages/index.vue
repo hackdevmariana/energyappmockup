@@ -8,6 +8,12 @@
       backgroundColor="var(--expenses-color)"
     />
 
+    <SelfConsumptionChart
+      :data="[
+        { name: 'Autoconsumo', value: 70 },
+        { name: 'Excedente vertido', value: 30 },
+      ]"
+    />
     <UserComparisonChart
       :users="['Tú', 'Usuario A', 'Usuario B', 'Usuario C']"
       :consumption="[150, 200, 180, 220]"
