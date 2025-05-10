@@ -8,6 +8,8 @@
       backgroundColor="var(--expenses-color)"
     />
 
+    <PowerGridStatus generation="120" consumption="110" stability="Estable" />
+
     <ConsumptionHistoryChart
       :labels="['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio']"
       :consumption="[120, 135, 110, 145, 160, 155]"
@@ -72,6 +74,7 @@ import EnergyDifferenceChart from "~/components/EnergyDifferenceChart.vue";
 import EnergySavingsChart from "~/components/EnergySavingsChart.vue";
 import EnergyConsumptionChart from "~/components/EnergyConsumptionChart.vue";
 import ConsumptionHistoryChart from "~/components/ConsumptionHistoryChart.vue";
+import PowerGridStatus from "~/components/PowerGridStatus.vue";
 
 definePageMeta({
   layout: "default",

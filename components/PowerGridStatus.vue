@@ -1,3 +1,10 @@
+<!--
+USAGE:
+
+    <PowerGridStatus generation="120" consumption="110" stability="Estable" />
+
+-->
+
 <template>
   <div class="grid-status-container">
     <h2>Estado de la Red</h2>
