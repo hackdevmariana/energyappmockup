@@ -8,6 +8,11 @@
       backgroundColor="var(--expenses-color)"
     />
 
+    <UserComparisonChart
+      :users="['Tú', 'Usuario A', 'Usuario B', 'Usuario C']"
+      :consumption="[150, 200, 180, 220]"
+    />
+
     <EnergyConsumptionChart
       :labels="['00:00', '06:00', '12:00', '18:00', '24:00']"
       :consumption="[0.4, 0.8, 1.2, 1.1, 0.5]"
