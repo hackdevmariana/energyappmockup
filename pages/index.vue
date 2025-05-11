@@ -8,6 +8,11 @@
       tipText="Contenedores"
       link="/components/containers"
     />
+
+    <h1>Animación de palabras</h1>
+    <WordLoader
+      :words="['energía', 'solar', 'cooperativas', 'consumo', 'ahorro']"
+    />
   </div>
 </template>
 
