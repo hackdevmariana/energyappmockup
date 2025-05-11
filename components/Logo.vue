@@ -3,11 +3,15 @@ const config = useRuntimeConfig();
 </script>
 
 <template>
-  <div class="shine">{{ config.public.appName }}</div>
+  <NuxtLink to="/">
+    <div class="shine">{{ config.public.appName }}</div>
+  </NuxtLink>
 </template>
 
 <style>
-/* From Uiverse.io by devkatyall */ 
+a {
+  text-decoration: none;
+}
 .shine {
   font-size: 2em;
   font-weight: 900;
@@ -46,5 +50,4 @@ const config = useRuntimeConfig();
     background-position: 200px;
   }
 }
-
 </style>
