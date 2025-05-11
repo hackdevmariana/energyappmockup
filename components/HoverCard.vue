@@ -1,15 +1,16 @@
 <template>
-  <div class="card" :class="colorClass">
-    <p class="tip">{{ tipText }}</p>
-    <p class="second-text">{{ secondText }}</p>
-  </div>
+  <NuxtLink v-if="link" :to="link" class="card-link">
+    <div class="card" :class="colorClass">
+      <p class="tip">{{ tipText }}</p>
+    </div>
+  </NuxtLink>
 </template>
 
 <script setup>
 defineProps({
-  colorClass: { type: String, required: true }, // Clases para el color (red, primary, green)
+  colorClass: { type: String, required: true }, // Clases de color (red, primary, green)
   tipText: { type: String, default: "Hover Me" }, // Texto del primer párrafo
-  secondText: { type: String, default: "Lorem Ipsum" }, // Texto del segundo párrafo
+  link: { type: String, default: "" }, // Ruta dentro de la aplicación
 });
 </script>
 
@@ -33,16 +34,27 @@ defineProps({
   font-weight: 700;
 }
 
-.card p.second-text {
-  font-size: 0.7em;
+.card-link {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  transition: 300ms;
 }
 
+.card-link:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Efectos hover */
 .card:hover {
   transform: scale(1.1, 1.1);
 }
 
 .cards:hover > .card:not(:hover) {
-  filter: blur(50px);
+  filter: blur(5px);
   transform: scale(0.9, 0.9);
 }
 
