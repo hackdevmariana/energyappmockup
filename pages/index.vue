@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import InputUnderline from "~/components/InputUnderline.vue";
 import HoverCard from "~/components/HoverCard.vue";
+import MenuCard from "~/components/MenuCard.vue";
 </script>
 
 <template>
@@ -18,7 +19,7 @@ import HoverCard from "~/components/HoverCard.vue";
         { label: 'Premium', value: 'premium' },
       ]"
     />
-
+    <MenuCard />
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
