@@ -10,6 +10,15 @@ import HoverCard from "~/components/HoverCard.vue";
       yesLabel="Sí"
       noLabel="No"
     />
+
+    <GliderRadio
+      :options="[
+        { label: 'Gratis', value: 'free' },
+        { label: 'Básico', value: 'basic' },
+        { label: 'Premium', value: 'premium' },
+      ]"
+    />
+
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
