@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import InputUnderline from "~/components/InputUnderline.vue";
+import HoverCard from "~/components/HoverCard.vue";
 </script>
 
 <template>

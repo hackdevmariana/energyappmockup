@@ -1,16 +1,22 @@
 <template>
-  <NuxtLink v-if="link" :to="link" class="card-link">
+  <component
+    :is="link ? NuxtLink : 'div'"
+    :to="link || undefined"
+    class="card-link"
+  >
     <div class="card" :class="colorClass">
       <p class="tip">{{ tipText }}</p>
     </div>
-  </NuxtLink>
+  </component>
 </template>
 
 <script setup>
+import { NuxtLink } from "#components";
+
 defineProps({
-  colorClass: { type: String, required: true }, // Clases de color (red, primary, green)
-  tipText: { type: String, default: "Hover Me" }, // Texto del primer párrafo
-  link: { type: String, default: "" }, // Ruta dentro de la aplicación
+  colorClass: { type: String, required: true },
+  tipText: { type: String, default: "Hover Me" },
+  link: { type: String, default: "" },
 });
 </script>
 
@@ -37,9 +43,8 @@ defineProps({
 .card-link {
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   transition: 300ms;
 }
@@ -48,7 +53,6 @@ defineProps({
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Efectos hover */
 .card:hover {
   transform: scale(1.1, 1.1);
 }
@@ -58,7 +62,6 @@ defineProps({
   transform: scale(0.9, 0.9);
 }
 
-/* Colores dinámicos */
 .red {
   background-color: var(--expenses-color);
 }
