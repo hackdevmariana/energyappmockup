@@ -1,6 +1,7 @@
 <template>
   <nav>
     <Logo />
+    <HamburgerMenu />
     <ThemeToggle />
   </nav>
 </template>
