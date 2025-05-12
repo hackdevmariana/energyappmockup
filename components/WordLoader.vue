@@ -1,7 +1,17 @@
+<!-- 
+USAGE:
+
+    <WordLoader
+      :words="['fotovoltaica', 'solar', 'biogás', 'hidráulica', 'biomasa']"
+      loadingText="Energía"
+    />
+
+-->
+
 <template>
   <div class="card">
     <div class="loader">
-      <p>loading</p>
+      <p>{{ loadingText }}</p>
       <div class="words">
         <span
           v-for="(word, index) in words"
@@ -22,6 +32,11 @@ defineProps({
     type: Array,
     required: true,
     default: () => ["buttons", "forms", "switches", "cards"],
+  },
+  loadingText: {
+    type: String,
+    required: false,
+    default: "loading", // Por defecto muestra "loading" si no se pasa ningún valor
   },
 });
 </script>

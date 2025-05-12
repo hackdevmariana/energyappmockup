@@ -1,5 +1,9 @@
 <template>
   <div class="container-center">
+    <h1>Formulario de prueba</h1>
+    <FloatingLabelInput labelText="Nombre" />
+    <FloatingLabelInput labelText="Correo electrónico" />
+    <FloatingLabelInput labelText="Teléfono" />
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
