@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     }
   }, // <- Aquí faltaba la coma
   modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/icon'],
-  css: ["~/styles/style.css"],
+  css: ["~/styles/style.css", "bootstrap-icons/font/bootstrap-icons.css"],
   plugins: [{ src: "~/plugins/vue-echarts", mode: "client" }],
   app: {
     head: {
