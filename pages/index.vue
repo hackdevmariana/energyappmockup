@@ -4,16 +4,6 @@ import InputUnderline from "~/components/InputUnderline.vue";
 
 <template>
   <div class="container-center">
-    <InputUnderline
-      label="Nombre"
-      placeholder="Introduce tu nombre"
-      inputId="name-input"
-    />
-    <InputUnderline
-      label="Correo"
-      placeholder="Introduce tu correo"
-      inputId="email-input"
-    />
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
