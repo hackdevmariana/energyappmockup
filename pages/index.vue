@@ -5,6 +5,11 @@ import HoverCard from "~/components/HoverCard.vue";
 
 <template>
   <div class="container-center">
+    <ArticleFeedback
+      heading="¿Te ha sido útil este artículo?"
+      yesLabel="Sí"
+      noLabel="No"
+    />
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
