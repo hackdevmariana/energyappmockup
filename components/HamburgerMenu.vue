@@ -34,7 +34,7 @@ function closeMenu() {
   background: transparent;
   border: none;
   cursor: pointer;
-  color: white;
+  color: var(--text-color);
 }
 
 .overlay {
