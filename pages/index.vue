@@ -7,6 +7,8 @@ import BatteryCharging from "~/components/BatteryCharging.vue";
 
 <template>
   <div class="container-center">
+    <h1>Texto con Glitch</h1>
+    <GlitchText text="ENERGY" />
     <BatteryCharging />
     <ArticleFeedback
       heading="¿Te ha sido útil este artículo?"
