@@ -15,7 +15,7 @@ import BatteryCharging from "~/components/BatteryCharging.vue";
       yesLabel="Sí"
       noLabel="No"
     />
-
+    <ActivateHeart />
     <GliderRadio
       :options="[
         { label: 'Gratis', value: 'free' },
