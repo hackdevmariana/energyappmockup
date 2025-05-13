@@ -2,10 +2,12 @@
 import InputUnderline from "~/components/InputUnderline.vue";
 import HoverCard from "~/components/HoverCard.vue";
 import MenuCard from "~/components/MenuCard.vue";
+import BatteryCharging from "~/components/BatteryCharging.vue";
 </script>
 
 <template>
   <div class="container-center">
+    <BatteryCharging />
     <ArticleFeedback
       heading="¿Te ha sido útil este artículo?"
       yesLabel="Sí"
