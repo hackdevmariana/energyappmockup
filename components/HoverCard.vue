@@ -77,4 +77,9 @@ defineProps({
 .green {
   background-color: var(--income-color);
 }
+
+.negate {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
 </style>
