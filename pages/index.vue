@@ -7,6 +7,7 @@ import BatteryCharging from "~/components/BatteryCharging.vue";
 
 <template>
   <div class="container-center">
+    <CreditCardForm />
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
@@ -24,3 +25,4 @@ import BatteryCharging from "~/components/BatteryCharging.vue";
     <HoverCard colorClass="negate" tipText="Extra" link="/components/extra" />
   </div>
 </template>
+<style scoped></style>
