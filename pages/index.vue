@@ -3,21 +3,12 @@ import InputUnderline from "~/components/InputUnderline.vue";
 import HoverCard from "~/components/HoverCard.vue";
 import MenuCard from "~/components/MenuCard.vue";
 import BatteryCharging from "~/components/BatteryCharging.vue";
-import ToggleButton from "~/components/ToggleButton.vue";
 </script>
 
 <template>
   <div class="container-center">
-    <ToggleButton label="Encender" labelTwo="Apagar" checkboxId="toggle-1" />
-    <h1>Texto con Glitch</h1>
-    <GlitchText text="ENERGY" />
     <BatteryCharging />
-    <ArticleFeedback
-      heading="¿Te ha sido útil este artículo?"
-      yesLabel="Sí"
-      noLabel="No"
-    />
-    <ActivateHeart />
+
     <GliderRadio
       :options="[
         { label: 'Gratis', value: 'free' },
@@ -39,6 +30,7 @@ import ToggleButton from "~/components/ToggleButton.vue";
       tipText="Formularios"
       link="/components/forms"
     />
+    <HoverCard colorClass="secondary" tipText="UI" link="/components/ui" />
 
     <h1>Animación de palabras</h1>
     <WordLoader
