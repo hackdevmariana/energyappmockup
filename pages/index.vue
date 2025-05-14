@@ -9,14 +9,6 @@ import BatteryCharging from "~/components/BatteryCharging.vue";
   <div class="container-center">
     <BatteryCharging />
 
-    <GliderRadio
-      :options="[
-        { label: 'Gratis', value: 'free' },
-        { label: 'Básico', value: 'basic' },
-        { label: 'Premium', value: 'premium' },
-      ]"
-    />
-    <MenuCard />
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
