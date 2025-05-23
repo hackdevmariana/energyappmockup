@@ -7,7 +7,7 @@ import BatteryCharging from "~/components/BatteryCharging.vue";
 
 <template>
   <div class="container-center">
-    
+    <EnergyButton text="Ver consumo" url="/energy-dashboard" />
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
