@@ -23,8 +23,7 @@ const navigate = () => {
 
 <style scoped>
 .energy-button {
-  background: linear-gradient(135deg, var(--secondary-color), #ff8800); /* Gradiente moderno */
-  border: none;
+  background: linear-gradient(135deg, var(--secondary-color), #ff8800); 
   padding: 14px 22px;
   font-size: 16px;
   font-weight: bold;
@@ -41,10 +40,11 @@ const navigate = () => {
 
 .energy-button:hover {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(85deg, #ff8800, var(--secondary-color)); 
   transform: translateY(-2px);
 }
 
 .energy-button:active {
-  transform: translateY(2px); /* Efecto de presión */
+  transform: translateY(-8px); 
 }
 </style>
