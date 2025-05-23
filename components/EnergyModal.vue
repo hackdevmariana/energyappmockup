@@ -19,14 +19,31 @@ defineProps({
 </script>
 
 <style scoped>
+
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-color, black);
+  transition: 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(8px); /* Glass effect */
-  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px); /* Mayor desenfoque */
+  background: rgba(0, 0, 0, 0.3); /* Fondo más translúcido */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,34 +51,31 @@ defineProps({
 }
 
 .modal-container {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2); /* Más transparencia */
+  backdrop-filter: blur(20px); /* Desenfoque aplicado */
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
   width: 80%;
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
   animation: fadeIn 0.3s ease-in-out;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  border: none;
-  background: transparent;
-  font-size: 20px;
-  cursor: pointer;
+.dark-mode .modal-container {
+  background: rgba(20, 20, 20, 0.2); /* Ajuste para modo oscuro */
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 </style>
