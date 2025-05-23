@@ -7,5 +7,7 @@
     <WordLoader
       :words="['energía', 'solar', 'cooperativas', 'consumo', 'ahorro']"
     />
+    <h1>CreditCardForm</h1>
+    <CreditCardForm />
   </div>
 </template>
