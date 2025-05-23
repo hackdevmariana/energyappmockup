@@ -19,5 +19,8 @@ import PowerButton from "~/components/PowerButton.vue";
     <h1>ActivateHeart</h1>
 
     <ActivateHeart />
+
+    <h1>EnergyButton</h1>
+    <EnergyButton text="Ver consumo" url="/energy-dashboard" />
   </div>
 </template>
