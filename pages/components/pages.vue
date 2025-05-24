@@ -6,5 +6,7 @@
     <ElectricityPriceTomorrow />
     <h1>Seleccionar el día</h1>
     <ElectricityPriceByDate />
+    <h1>BitcoinCalc</h1>
+    <BitcoinCalc />
   </div>
 </template>
