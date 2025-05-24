@@ -11,26 +11,19 @@ const modalOpen = ref(false);
 
 <template>
   <div class="container-center">
-    <ElectricityPriceTomorrow />
+
+    <ElectricityPriceByDate />
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>
-  <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">
-    <h2>Información energética</h2>
-    <p>Consulta tu consumo eléctrico y ajusta tu configuración.</p>
-  </EnergyModal>
+    <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">
+      <h2>Información energética</h2>
+      <p>Consulta tu consumo eléctrico y ajusta tu configuración.</p>
+    </EnergyModal>
 
     <h1>Colecciones de componentes</h1>
 
     <HoverCard colorClass="red" tipText="Gráficos" link="/components/charts" />
-    <HoverCard
-      colorClass="green"
-      tipText="Contenedores"
-      link="/components/containers"
-    />
-    <HoverCard
-      colorClass="primary"
-      tipText="Formularios"
-      link="/components/forms"
-    />
+    <HoverCard colorClass="green" tipText="Contenedores" link="/components/containers" />
+    <HoverCard colorClass="primary" tipText="Formularios" link="/components/forms" />
     <HoverCard colorClass="secondary" tipText="UI" link="/components/ui" />
     <HoverCard colorClass="negate" tipText="Extra" link="/components/extra" />
 
@@ -52,4 +45,3 @@ const modalOpen = ref(false);
   background: #ffaa00;
 }
 </style>
-
