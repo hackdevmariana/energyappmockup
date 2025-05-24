@@ -9,24 +9,38 @@
       No hay datos disponibles para esta fecha. Prueba con otro día.
     </p>
 
-    <div v-else class="list">
-      <div
-        v-for="(hour, index) in prices"
-        :key="index"
-        :class="getBackgroundColor(hour.value)"
-        class="hour-box"
-      >
-        <span class="hour">{{ hour.hour }}:00</span>
-        <span class="mwh">{{ hour.value.toFixed(2) }} €/MWh</span>
-        <span class="kwh">{{ (hour.value / 1000).toFixed(5) }} €/kWh</span>
+    <div v-else>
+      <div class="list">
+        <div
+          v-for="(hour, index) in prices"
+          :key="index"
+          :class="getBackgroundColor(hour.value)"
+          class="hour-box"
+        >
+          <span class="hour">{{ hour.hour }}:00</span>
+          <span class="mwh">{{ hour.value.toFixed(2) }} €/MWh</span>
+          <span class="kwh">{{ (hour.value / 1000).toFixed(5) }} €/kWh</span>
+        </div>
+      </div>
+
+      <!-- Gráfica de precios por horas -->
+      <div class="chart-container">
+        <v-chart class="chart" :option="chartOptions" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import Vue3Datepicker from 'vue3-datepicker';
+import { use } from "echarts/core";
+import VChart from "vue-echarts";
+import { LineChart } from "echarts/charts";
+import { GridComponent, TooltipComponent } from "echarts/components";
+import { CanvasRenderer } from "echarts/renderers";
+
+use([LineChart, GridComponent, TooltipComponent, CanvasRenderer]);
 
 const selectedDate = ref(new Date());
 const prices = ref([]);
@@ -64,6 +78,28 @@ const getBackgroundColor = (price) => {
   return "secondary"; // Precio intermedio
 };
 
+const chartOptions = computed(() => ({
+  tooltip: {
+    trigger: "axis",
+  },
+  xAxis: {
+    type: "category",
+    data: prices.value.map((p) => `${p.hour}:00`),
+  },
+  yAxis: {
+    type: "value",
+    name: "€/MWh",
+  },
+  series: [
+    {
+      data: prices.value.map((p) => p.value),
+      type: "line",
+      smooth: true,
+      color: "#149CEA",
+    },
+  ],
+}));
+
 onMounted(fetchPrices);
 </script>
 
@@ -97,19 +133,14 @@ onMounted(fetchPrices);
   font-weight: bold;
 }
 
-.hour {
-  flex: 1;
-  text-align: left;
+.chart-container {
+  width: 90%;
+  margin: 20px auto;
 }
 
-.mwh {
-  flex: 1;
-  text-align: center;
-}
-
-.kwh {
-  flex: 1;
-  text-align: right;
+.chart {
+  width: 100%;
+  height: 400px;
 }
 
 .income {

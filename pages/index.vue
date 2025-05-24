@@ -11,8 +11,6 @@ const modalOpen = ref(false);
 
 <template>
   <div class="container-center">
-
-    <ElectricityPriceByDate />
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>
     <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">
       <h2>Información energética</h2>
