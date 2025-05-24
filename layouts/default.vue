@@ -23,7 +23,7 @@ import DividingLine from "~/components/DividingLine.vue";
 }
 
 .spacer {
-  height: 150px; 
+  height: 100px; 
 }
 </style>
 

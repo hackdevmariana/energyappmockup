@@ -10,10 +10,6 @@
     />
     <h1>CurrentElectricityPrice</h1>
     <CurrentElectricityPrice />
-    <h1>ElectricityPriceToday</h1>
-    <ElectricityPriceToday />
-    <h1>ElectricityPriceTomorrow</h1>
-    <ElectricityPriceTomorrow />
     <h1>ActualForecastScheduledDemand</h1>
     <ActualForecastScheduledDemand />
   </div>

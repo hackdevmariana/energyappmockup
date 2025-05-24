@@ -27,7 +27,7 @@ const router = useRouter();
 <style scoped>
 .navigation-card {
   position: fixed;
-  bottom: 80px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
