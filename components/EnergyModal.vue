@@ -42,17 +42,16 @@ defineProps({
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(15px); /* Mayor desenfoque */
-  background: rgba(0, 0, 0, 0.3); /* Fondo más translúcido */
-  display: flex;
+  backdrop-filter: blur(15px); 
+  background: rgba(0, 0, 0, 0.3);
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
 .modal-container {
-  background: rgba(255, 255, 255, 0.2); /* Más transparencia */
-  backdrop-filter: blur(20px); /* Desenfoque aplicado */
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(20px); 
   padding: 25px;
   border-radius: 14px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
@@ -64,7 +63,7 @@ defineProps({
 }
 
 .dark-mode .modal-container {
-  background: rgba(20, 20, 20, 0.2); /* Ajuste para modo oscuro */
+  background: rgba(20, 20, 20, 0.2); 
 }
 
 @keyframes fadeIn {
