@@ -1,26 +1,42 @@
 <template>
   <div class="contenedor">
     <h2>Precios de la luz para mañana</h2>
+
     <p v-if="prices.length === 0" class="no-data">
       Los precios de mañana todavía no están disponibles. Vuelve a consultar dentro de un rato.
     </p>
-    <div v-else class="list">
-      <div
-        v-for="(hour, index) in prices"
-        :key="index"
-        :class="getBackgroundColor(hour.value)"
-        class="hour-box"
-      >
-        <span class="hour">{{ hour.hour }}:00</span>
-        <span class="mwh">{{ hour.value.toFixed(2) }} €/MWh</span>
-        <span class="kwh">{{ (hour.value / 1000).toFixed(5) }} €/kWh</span>
+
+    <div v-else>
+      <div class="list">
+        <div
+          v-for="(hour, index) in prices"
+          :key="index"
+          :class="getBackgroundColor(hour.value)"
+          class="hour-box"
+        >
+          <span class="hour">{{ hour.hour }}:00</span>
+          <span class="mwh">{{ hour.value.toFixed(2) }} €/MWh</span>
+          <span class="kwh">{{ (hour.value / 1000).toFixed(5) }} €/kWh</span>
+        </div>
+      </div>
+
+      <!-- Gráfica de precios para mañana -->
+      <div class="chart-container">
+        <v-chart class="chart" :option="chartOptions" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import { use } from 'echarts/core';
+import VChart from 'vue-echarts';
+import { LineChart } from 'echarts/charts';
+import { GridComponent, TooltipComponent } from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+
+use([LineChart, GridComponent, TooltipComponent, CanvasRenderer]);
 
 const prices = ref([]);
 const averagePrice = ref(0);
@@ -51,10 +67,24 @@ const fetchPrices = async () => {
 };
 
 const getBackgroundColor = (price) => {
-  if (price < averagePrice.value * 0.9) return "income"; // Precio más barato
-  if (price > averagePrice.value * 1.1) return "expenses"; // Precio más caro
-  return "secondary"; // Precio intermedio
+  if (price < averagePrice.value * 0.9) return "income";
+  if (price > averagePrice.value * 1.1) return "expenses";
+  return "secondary";
 };
+
+const chartOptions = computed(() => ({
+  tooltip: { trigger: "axis" },
+  xAxis: { type: "category", data: prices.value.map((p) => `${p.hour}:00`) },
+  yAxis: { type: "value", name: "€/MWh" },
+  series: [
+    {
+      data: prices.value.map((p) => p.value),
+      type: "line",
+      smooth: true,
+      color: "#149CEA",
+    },
+  ],
+}));
 
 onMounted(fetchPrices);
 </script>
@@ -87,6 +117,16 @@ onMounted(fetchPrices);
   border-radius: 8px;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.chart-container {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.chart {
+  width: 100%;
+  height: 400px;
 }
 
 .hour {
