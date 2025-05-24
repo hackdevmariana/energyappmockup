@@ -11,7 +11,7 @@ const modalOpen = ref(false);
 
 <template>
   <div class="container-center">
-<ActualForecastScheduledDemand />
+
     <ElectricityPriceByDate />
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>
     <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">
@@ -26,6 +26,7 @@ const modalOpen = ref(false);
     <HoverCard colorClass="primary" tipText="Formularios" link="/components/forms" />
     <HoverCard colorClass="secondary" tipText="UI" link="/components/ui" />
     <HoverCard colorClass="negate" tipText="Extra" link="/components/extra" />
+    <HoverCard colorClass="red" tipText="Páginas" link="/components/pages" />
 
 
 

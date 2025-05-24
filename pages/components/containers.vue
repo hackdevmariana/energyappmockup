@@ -14,6 +14,8 @@
     <ElectricityPriceToday />
     <h1>ElectricityPriceTomorrow</h1>
     <ElectricityPriceTomorrow />
+    <h1>ActualForecastScheduledDemand</h1>
+    <ActualForecastScheduledDemand />
   </div>
 </template>
 <script setup>
