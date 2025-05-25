@@ -13,5 +13,7 @@
     <EnergyGenerationStructure />
     <h1>TextIntroduction</h1>
     <TextIntroduction text="EnergyAPP" />
+    <h1>TextAnimation</h1>
+    <TextAnimation text="EnergyAPP" />
   </div>
 </template>
