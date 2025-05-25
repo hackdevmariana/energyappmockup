@@ -5,6 +5,7 @@ import HoverCard from "~/components/HoverCard.vue";
 import MenuCard from "~/components/MenuCard.vue";
 import BatteryCharging from "~/components/BatteryCharging.vue";
 import EnergyModal from "@/components/EnergyModal.vue";
+import TextIntroduction from "~/components/TextIntroduction.vue";
 
 const modalOpen = ref(false);
 </script>
