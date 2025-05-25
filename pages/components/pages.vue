@@ -8,5 +8,8 @@
     <ElectricityPriceByDate />
     <h1>BitcoinCalc</h1>
     <BitcoinCalc />
+
+    <h1>EnergyGenerationStructure</h1>
+    <EnergyGenerationStructure />
   </div>
 </template>
