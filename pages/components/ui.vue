@@ -26,5 +26,6 @@ import PowerButton from "~/components/PowerButton.vue";
     <EnergyButton text="Ver consumo" url="/energy-dashboard" />
 <h1>ButtonComponent</h1>
     <ButtonComponent text="Nuxt" url="https://nuxt.com" />
+
   </div>
 </template>
