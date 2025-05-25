@@ -5,14 +5,14 @@ import HoverCard from "~/components/HoverCard.vue";
 import MenuCard from "~/components/MenuCard.vue";
 import BatteryCharging from "~/components/BatteryCharging.vue";
 import EnergyModal from "@/components/EnergyModal.vue";
-import TextIntroduction from "~/components/TextIntroduction.vue";
+
 
 const modalOpen = ref(false);
 </script>
 
 <template>
   <div class="container-center">
-    
+    <TextAnimation text="EnergyAPP" />
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>
     <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">
       <h2>Información energética</h2>
