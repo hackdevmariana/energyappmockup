@@ -26,6 +26,9 @@ import PowerButton from "~/components/PowerButton.vue";
     <EnergyButton text="Ver consumo" url="/energy-dashboard" />
 <h1>ButtonComponent</h1>
     <ButtonComponent text="Nuxt" url="https://nuxt.com" />
-
+<h1>BatteryCharge</h1>
+    <BatteryCharge :chargeLevel="30" />
+<h1>BatteryChargingAnimation</h1>
+    <BatteryChargingAnimation />
   </div>
 </template>
