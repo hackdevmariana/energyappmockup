@@ -4,6 +4,8 @@ import PowerButton from "~/components/PowerButton.vue";
 
 <template>
   <div class="container-center">
+    <h1>AnimatedHeader</h1>
+    <AnimatedHeader title="EnergyAPP" />
     <h1>PowerButton</h1>
     <PowerButton label="Encender" labelTwo="Apagar" checkboxId="toggle-1" />
 
