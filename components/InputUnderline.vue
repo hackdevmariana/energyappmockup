@@ -57,14 +57,14 @@ const inputValue = ref("");
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
 .input-field:focus + .input-label {
   top: -20px;
   font-size: 12px;
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .input-field:focus + .input-label + .input-highlight {
