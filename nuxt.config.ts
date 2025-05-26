@@ -5,10 +5,10 @@ export default defineNuxtConfig({
     public: {
       appName: process.env.APP_NAME || "Aplicación por defecto"
     }
-  }, // <- Aquí faltaba la coma
+  }, 
   modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/icon'],
   css: ["~/styles/style.css", "bootstrap-icons/font/bootstrap-icons.css"],
-  plugins: [{ src: "~/plugins/vue-echarts", mode: "client" }],
+  plugins: ["~/plugins/pinia.js", { src: "~/plugins/vue-echarts", mode: "client" }],
   app: {
     head: {
       link: [

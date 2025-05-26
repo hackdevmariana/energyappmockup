@@ -1,21 +1,20 @@
-export const useTheme = () => {
-  const theme = useState("theme", () => "light");
+import { useColorMode } from "#imports";
 
-  const applyTheme = () => {
-    document.documentElement.classList.toggle("dark-mode", theme.value === "dark");
-    document.body.classList.toggle("dark-mode", theme.value === "dark");
-  };
+export const useTheme = () => {
+  const colorMode = useColorMode();
+
+  // 🔹 Cargar la preferencia almacenada al iniciar la app
+  if (import.meta.client) {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      colorMode.preference = savedTheme;
+    }
+  }
 
   const toggleTheme = () => {
-    theme.value = theme.value === "light" ? "dark" : "light";
-    localStorage.setItem("theme", theme.value);
-    applyTheme(); // Aplicar el tema después de cambiarlo
+    colorMode.preference = colorMode.preference === "light" ? "dark" : "light";
+    localStorage.setItem("theme", colorMode.preference); // 🔥 Guarda el estado del usuario
   };
 
-  onMounted(() => {
-    theme.value = localStorage.getItem("theme") || "light";
-    applyTheme();
-  });
-
-  return { theme, toggleTheme };
+  return { colorMode, toggleTheme };
 };
