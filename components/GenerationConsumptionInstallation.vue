@@ -6,8 +6,7 @@ import { defineProps } from "vue";
 const props = defineProps(["logo", "installationName", "date", "production"]);
 
 dayjs.locale("es"); 
-const formattedDate = dayjs(props.date).format("dddd, D [de] MMMM YYYY"); // ðŸ“Œ Ejemplo: "martes, 27 de mayo de 2025"
-</script>
+const formattedDate = dayjs(props.date).format("dddd, D [de] MMMM YYYY"); </script>
 
 <template>
   <div class="energy-item">
@@ -16,7 +15,7 @@ const formattedDate = dayjs(props.date).format("dddd, D [de] MMMM YYYY"); // ðŸ“
       <div class="energy-name">{{ props.installationName }}</div>
       <div class="energy-date">{{ formattedDate }}</div>
     </div>
-    <div class="energy-production">{{ props.production }} kWh</div>
+    <div class="energy-production">{{ props.production }}</div>
   </div>
 </template>
 
@@ -27,9 +26,13 @@ const formattedDate = dayjs(props.date).format("dddd, D [de] MMMM YYYY"); // ðŸ“
   background-color: var(--background-color);
   color: var(--text-color);
   border-radius: 10px;
+  border: 1px solid var(--text-color); 
   padding: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
+  width: 90%;
 }
+
 
 .energy-logo {
   width: 50px;
@@ -45,10 +48,13 @@ const formattedDate = dayjs(props.date).format("dddd, D [de] MMMM YYYY"); // ðŸ“
 
 .energy-name {
   font-weight: bold;
+  text-align: left;
 }
 
 .energy-date {
   font-size: 0.9em;
+  text-align: left;
+
 }
 
 .energy-production {

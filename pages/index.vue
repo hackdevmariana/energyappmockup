@@ -1,17 +1,25 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import InputUnderline from "~/components/InputUnderline.vue";
-import HoverCard from "~/components/HoverCard.vue";
-import MenuCard from "~/components/MenuCard.vue";
-import BatteryCharging from "~/components/BatteryCharging.vue";
-import EnergyModal from "@/components/EnergyModal.vue";
+import dayjs from "dayjs";
+import "dayjs/locale/es"; 
+import GenerationConsumptionInstallation from "~/components/GenerationConsumptionInstallation.vue";
 
-
+dayjs.locale("es"); 
+const today = dayjs().format("YYYY-MM-DD"); 
 const modalOpen = ref(false);
 </script>
 
+
+
 <template>
   <div class="container-center">
+    
+    <GenerationConsumptionInstallation
+      logo="https://nuxt.com/assets/design-kit/icon-green.svg"
+      installationName="Cooperativa energética de Borja"
+      :date="today" 
+      production="8 kWh"
+    />
     
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>
     <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">
