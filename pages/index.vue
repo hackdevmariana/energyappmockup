@@ -13,13 +13,7 @@ const modalOpen = ref(false);
 
 <template>
   <div class="container-center">
-    
-    <GenerationConsumptionInstallation
-      logo="https://nuxt.com/assets/design-kit/icon-green.svg"
-      installationName="Cooperativa energética de Borja"
-      :date="today" 
-      production="8 kWh"
-    />
+    <ClockDisplay />
     
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>
     <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">

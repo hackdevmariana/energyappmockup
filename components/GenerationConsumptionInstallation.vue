@@ -1,3 +1,22 @@
+<!--
+USAGE:
+
+<script setup>
+    dayjs.locale("es"); 
+    const today = dayjs().format("YYYY-MM-DD"); 
+    const modalOpen = ref(false);
+</script>
+<template>
+    <GenerationConsumptionInstallation
+      logo="https://nuxt.com/assets/design-kit/icon-green.svg"
+      installationName="Cooperativa energética de Borja"
+      :date="today" 
+      production="8 kWh"
+    />
+</template>
+-->
+
+
 <script setup>
 import dayjs from "dayjs";
 import "dayjs/locale/es"; 
