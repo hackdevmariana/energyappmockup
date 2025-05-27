@@ -81,6 +81,13 @@
   border: 2px solid #313131;
   border-radius: 10px;
   padding: 3px 4px;
+  
+
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
 
   .separator {
     width: 100%;
