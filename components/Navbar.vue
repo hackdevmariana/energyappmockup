@@ -2,6 +2,7 @@
   <nav>
     <Logo />
     <HamburgerMenu />
+    <ClockDisplay />
     <ThemeToggle />
   </nav>
 </template>
