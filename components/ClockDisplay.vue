@@ -1,15 +1,18 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
 
 dayjs.locale("es");
 
 const time = ref(dayjs().format("HH:mm")); 
-const date = ref(dayjs().format("dddd, D MMMM YYYY")); 
-setInterval(() => {
-  time.value = dayjs().format("HH:mm");
-}, 1000);
+const date = ref(dayjs().format("ddd D MMM YYYY")); 
+
+onMounted(() => {
+  setInterval(() => {
+    time.value = dayjs().format("HH:mm");
+  }, 1000);
+});
 </script>
 
 <template>
@@ -22,19 +25,18 @@ setInterval(() => {
 <style scoped>
 .clock-container {
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .clock-time {
   font-family: var(--font-featured);
-  font-size: 2em;
+  font-size: 2em; 
   font-weight: bold;
 }
 
 .clock-date {
   font-family: var(--font-general);
-  font-size: 0.6em;
+  font-size: 0.7em; 
   color: var(--text-color);
 }
 </style>
-s
