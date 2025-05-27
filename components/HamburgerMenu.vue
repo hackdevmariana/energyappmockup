@@ -46,5 +46,8 @@ function closeMenu() {
   border-radius: 10px;
   padding: 0.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 50;
 }
 </style>
+
+
