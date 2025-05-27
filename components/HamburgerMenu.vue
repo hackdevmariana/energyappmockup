@@ -41,7 +41,7 @@ function closeMenu() {
   position: absolute;
   top: 100%;
   right: 0;
-  z-index: 10;
+  z-index: 50;
   background: #1c1c1c;
   border-radius: 10px;
   padding: 0.5rem;

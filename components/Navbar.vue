@@ -1,9 +1,8 @@
 <template>
   <nav>
     <Logo />
-    <ClockDisplay />
     <HamburgerMenu />
-    
+    <ClockDisplay />
     <ThemeToggle />
   </nav>
 </template>
