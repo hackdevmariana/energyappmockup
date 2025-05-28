@@ -10,37 +10,46 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
+import dayjs from "dayjs";
+import "dayjs/locale/es";
 
-defineProps({
-  topLine: {
-    type: String,
-    default: "Precio de la luz"
-  },
-  bottomLine: {
-    type: String,
-    default: "€/MWh"
-  },
-  backgroundColor: {
-    type: String,
-    default: "var(--secondary-color)" 
-  }
-});
+dayjs.locale("es");
 
 const price = ref(null);
 
+const now = dayjs().startOf("hour").format("YYYY-MM-DDTHH:00"); // 🔹 Inicio de la hora actual
+const nextHour = dayjs().add(1, "hour").startOf("hour").format("YYYY-MM-DDTHH:00"); // 🔹 Inicio de la siguiente hora
+
+const nowStart = dayjs().startOf("hour").format("YYYY-MM-DDTHH:00"); // 🔥 Inicio de la hora actual
+const nowEnd = dayjs().endOf("hour").format("YYYY-MM-DDTHH:59"); // 🔥 Final de la hora actual
+
 const fetchPrice = async () => {
   try {
-    const response = await fetch("https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=2025-05-24T00:00&end_date=2025-05-24T23:59&time_trunc=hour");
+    const response = await fetch(
+      `https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=${nowStart}&end_date=${nowEnd}&time_trunc=hour`
+    );
+
     const data = await response.json();
-    price.value = data.included[0].attributes.values.slice(-1)[0].value; // Último precio disponible
+    console.log("Datos de la API:", data); // 🔥 Verificar la respuesta
+
+    if (data.included?.[0]?.attributes?.values?.length > 0) {
+      price.value = data.included[0].attributes.values.slice(-1)[0].value; // 📌 Último precio disponible dentro del rango
+    } else {
+      console.warn("No se encontraron datos para esta hora.");
+      price.value = "No disponible";
+    }
   } catch (error) {
     console.error("Error al obtener el precio de la luz:", error);
+    price.value = "Error";
   }
 };
 
 onMounted(fetchPrice);
+
+
 </script>
+
 
 <style scoped>
 .contenedor {
