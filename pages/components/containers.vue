@@ -7,6 +7,8 @@
     <CurrentElectricityPrice />
     <h1>LowestElectricityPrice</h1>
     <LowestElectricityPrice />
+    <h1>HighestElectricityPrice</h1>
+    <HighestElectricityPrice />
     <h1>ActualForecastScheduledDemand</h1>
     <ActualForecastScheduledDemand />
   </div>
