@@ -11,6 +11,8 @@
     <HighestElectricityPrice />
     <h1>AverageElectricityPrice</h1>
     <AverageElectricityPrice />
+    <h1>DifferentialElectricityPrice</h1>
+    <DifferentialElectricityPrice />
     <h1>ActualForecastScheduledDemand</h1>
     <ActualForecastScheduledDemand />
   </div>
