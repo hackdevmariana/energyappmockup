@@ -5,7 +5,7 @@ import Todaysprice from '../pages/todaysprice.vue';
 
 <template>
   <div class="container-center">
-    <ButtonComponent :text="'Precios de hoy'" :url="'~/pages/todaysprice'" />
+    <ButtonComponent :text="'Precios de hoy'" :url="'/pages/todaysprice'" />
 
     <h1>Precios de mañana</h1>
     <ElectricityPriceTomorrow />

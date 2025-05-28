@@ -1,35 +1,39 @@
 <template>
   <div class="contenedor">
-    <h2>Precios de la luz por hora</h2>
-    <p class="avg-price">Precio medio: {{ averagePrice.toFixed(2) }} €/MWh</p>
+    <h2>Precios de la luz de hoy</h2>
 
-    <div class="list">
-      <div
-        v-for="(hour, index) in prices"
-        :key="index"
-        :class="getBackgroundColor(hour.value)"
-        class="hour-box"
-      >
-        <span class="hour">{{ hour.hour }}:00</span>
-        <span class="mwh">{{ hour.value.toFixed(2) }} €/MWh</span>
-        <span class="kwh">{{ (hour.value / 1000).toFixed(5) }} €/kWh</span>
+    <p v-if="prices.length === 0" class="no-data">
+      Los precios de hoy todavía no están disponibles. Vuelve a consultar dentro de un rato.
+    </p>
+
+    <div v-else>
+      <div class="list">
+        <div v-for="(hour, index) in prices" :key="index" :class="getBackgroundColor(hour.value)" class="hour-box">
+          <span class="hour">{{ hour.hour }}:00</span>
+          <span class="mwh">{{ hour.value.toFixed(2) }} €/MWh</span>
+          <span class="kwh">{{ (hour.value / 1000).toFixed(5) }} €/kWh</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Gráfica de precios por hora -->
-    <div class="chart-container">
-      <v-chart class="chart" :option="chartOptions" />
+      <!-- 🔹 Envolver la gráfica con <client-only> -->
+      <client-only>
+        <div class="chart-container">
+          <v-chart class="chart" :option="chartOptions" />
+        </div>
+      </client-only>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
-import { use } from 'echarts/core';
-import VChart from 'vue-echarts';
-import { LineChart } from 'echarts/charts';
-import { GridComponent, TooltipComponent } from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
+import { ref, computed, onMounted } from "vue";
+import { use } from "echarts/core";
+import VChart from "vue-echarts";
+import { LineChart } from "echarts/charts";
+import { GridComponent, TooltipComponent } from "echarts/components";
+import { CanvasRenderer } from "echarts/renderers";
+import dayjs from "dayjs";
+import "dayjs/locale/es";
 
 use([LineChart, GridComponent, TooltipComponent, CanvasRenderer]);
 
@@ -38,18 +42,24 @@ const averagePrice = ref(0);
 
 const fetchPrices = async () => {
   try {
+    const today = dayjs().format("YYYY-MM-DD"); // 🔹 Fecha dinámica
+
     const response = await fetch(
-      "https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=2025-05-24T00:00&end_date=2025-05-24T23:59&time_trunc=hour"
+      `https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=${today}T00:00&end_date=${today}T23:59&time_trunc=hour`
     );
     const data = await response.json();
 
-    const parsedPrices = data.included[0].attributes.values.map((item) => ({
-      hour: new Date(item.datetime).getHours(),
-      value: item.value,
-    }));
+    console.log("Datos de la API:", data); // 🔥 Verifica la respuesta
 
-    prices.value = parsedPrices;
-    averagePrice.value = parsedPrices.reduce((sum, item) => sum + item.value, 0) / parsedPrices.length;
+    if (data.included && data.included[0].attributes.values.length > 0) {
+      const parsedPrices = data.included[0].attributes.values.map((item) => ({
+        hour: new Date(item.datetime).getHours(),
+        value: item.value,
+      }));
+
+      prices.value = parsedPrices;
+      averagePrice.value = parsedPrices.reduce((sum, item) => sum + item.value, 0) / parsedPrices.length;
+    }
   } catch (error) {
     console.error("Error al obtener los precios:", error);
   }
@@ -85,9 +95,12 @@ onMounted(fetchPrices);
   text-align: center;
 }
 
-.avg-price {
+.no-data {
   font-weight: bold;
-  margin-bottom: 10px;
+  color: var(--text-color);
+  padding: 15px;
+  background-color: var(--background-color);
+  border-radius: 8px;
 }
 
 .list {
