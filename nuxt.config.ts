@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     }
   }, 
   modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/icon'],
-  css: ["~/styles/style.css", "bootstrap-icons/font/bootstrap-icons.css"],
+  css: ["~/styles/style.css", "bootstrap-icons/font/bootstrap-icons.css", 'leaflet/dist/leaflet.css'],
   plugins: ["~/plugins/pinia.js", { src: "~/plugins/vue-echarts", mode: "client" }],
   app: {
     head: {
