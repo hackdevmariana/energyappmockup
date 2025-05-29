@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      appName: process.env.APP_NAME || "Aplicación por defecto"
+      appName: process.env.APP_NAME || "Aplicación por defecto",
+      tomtomKey: process.env.TOMTOM_KEY,
     }
   }, 
   modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/icon'],
