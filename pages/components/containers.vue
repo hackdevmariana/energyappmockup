@@ -15,6 +15,8 @@
     <DifferentialElectricityPrice />
     <h1>ActualForecastScheduledDemand</h1>
     <ActualForecastScheduledDemand />
+    <h1>Map</h1>
+    <Map />
   </div>
 </template>
 <script setup>
