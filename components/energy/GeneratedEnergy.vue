@@ -8,7 +8,7 @@
           <i class="bi bi-chevron-right"></i>
         </span>
       </div>
-      <i class="bi bi-house house-icon"></i>
+            <i class="fa-solid fa-house house-icon"></i> 
     </div>
 
     <div class="energy-info"> <!-- 🔹 Agrupamos en un `div` con `display: flex;` -->

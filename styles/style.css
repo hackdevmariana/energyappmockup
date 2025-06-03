@@ -9,7 +9,8 @@
   --expenses-color: #db2c2c;
   --font-general: "Urbanist", sans-serif;
   --font-featured: "Anton", sans-serif;
-  --text-color-rgb: 12, 9, 24;
+  --text-color-rgb:  12, 9, 24;
+  --background-color-rgb: 250, 250, 250;
   --no-black: #0c0918;
 }
 
@@ -23,6 +24,7 @@
   --font-general: "Urbanist", sans-serif;
   --font-featured: "Anton", sans-serif;
   --text-color-rgb: 250, 250, 250;
+  --background-color-rgb: 12, 9, 24;
   --no-black: #0c0918;
 }
 

@@ -1,19 +1,21 @@
 <template>
   <div class="energy-box">
     <div class="icons-row">
-      <i class="fa-solid fa-house house-icon"></i> 
+
+      <i class="fa-solid fa-bolt fa-2x"></i>
+
       <div class="energy-arrows">
         <span v-for="n in 5" :key="n" class="arrow"
           :style="{ opacity: activeArrow === n ? '1' : activeArrow - 1 === n || activeArrow + 1 === n ? '0.7' : '0.4' }">
           <i class="fa-solid fa-chevron-right"></i>
         </span>
       </div>
-      <i class="fa-solid fa-bolt grid-icon"></i> 
+      <i class="fa-solid fa-coins fa-2x"></i>
     </div>
 
     <div class="energy-info"> 
-      <div class="label">Energía emitida:</div>
-      <div class="value">{{ formattedEnergy }} kWh</div>
+      <div class="label">Ingresos estimados del día:</div>
+      <div class="value">{{ formattedEarnings }} €</div>
     </div>
   </div>
 </template>
@@ -21,9 +23,9 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 
-const props = defineProps({ energy: Number });
+const props = defineProps({ earnings: Number });
 
-const formattedEnergy = computed(() => String(props.energy).replace(".", ","));
+const formattedEarnings = computed(() => String(props.earnings).replace(".", ","));
 
 // 🔹 Animación de flechas progresiva
 const activeArrow = ref(1);
@@ -37,7 +39,8 @@ onMounted(() => {
 <style scoped>
 .energy-box {
   margin-top: 10px;
-  background-color: var(--income-color);
+  background-color: var(--text-color); 
+  color: var(--background-color);
   padding: 8px; 
   border: 1px solid var(--text-color);
   border-radius: 10px;
@@ -55,21 +58,23 @@ onMounted(() => {
   font-size: 1.8rem; 
 }
 
-.grid-icon {
+.earnings-icon {
   font-size: 1.6rem;
 }
 
 .energy-arrows {
   display: flex;
   gap: 6px;
+  
 }
 
 .arrow {
   font-size: 1.3rem;
-  color: rgba(var(--text-color-rgb), 1);
+  color: rgba(var(--background-color-rgb), 1);
   transition: opacity 0.4s ease-in-out;
   margin: 0 3px;
 }
+
 
 .energy-info {
   display: flex;
