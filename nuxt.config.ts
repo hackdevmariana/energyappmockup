@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       appName: process.env.APP_NAME || "Aplicación por defecto",
-      tomtomKey: process.env.TOMTOM_KEY,
+      volttimeKey: process.env.VOLTTIME_KEY,
     }
   }, 
   modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/icon'],

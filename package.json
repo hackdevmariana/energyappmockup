@@ -27,5 +27,8 @@
     "vue-echarts": "^7.0.3",
     "vue-router": "^4.5.1",
     "vue3-datepicker": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.18"
   }
 }

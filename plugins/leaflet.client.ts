@@ -1,5 +1,5 @@
 export default defineNuxtPlugin(() => {
-  if (process.client) {
+  if (import.meta.client) { 
     return {
       provide: {
         leaflet: import("leaflet"),
@@ -7,3 +7,4 @@ export default defineNuxtPlugin(() => {
     };
   }
 });
+
