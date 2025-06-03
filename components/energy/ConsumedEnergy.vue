@@ -1,7 +1,8 @@
 <template>
   <div class="energy-box">
     <div class="icons-row">
-      <i class="bi bi-solar-panel solar-icon"></i> 
+      <i class="fa-solid fa-solar-panel fa-2x"></i>
+
       <div class="energy-arrows">
         <span v-for="n in 5" :key="n" class="arrow"
           :style="{ opacity: activeArrow === n ? '1' : activeArrow - 1 === n || activeArrow + 1 === n ? '0.7' : '0.4' }">
