@@ -17,6 +17,8 @@ import Todaysprice from '../pages/todaysprice.vue';
     <ButtonComponent :text="'Carga de la aplicación'" :url="'/pages/textintroduction'" />
     <br>
     <ButtonComponent :text="'Otra carga'" :url="'/pages/textanimation'" />
-    
+    <br>
+    <ButtonComponent :text="'Productos'" :url="'/pages/products'" />
+
   </div>
 </template>
