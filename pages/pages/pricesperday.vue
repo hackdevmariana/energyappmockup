@@ -1,0 +1,5 @@
+
+
+<template>
+    <ElectricityPriceByDate />
+</template>

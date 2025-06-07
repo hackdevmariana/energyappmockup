@@ -1,9 +1,9 @@
-export default defineNuxtPlugin((nuxtApp) => {
-  if (!process.client) return; // Asegura que solo se ejecuta en el cliente
+import VueECharts from "vue-echarts";
+import { use } from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
 
-  import("echarts/core").then(({ use }) => {
-    import("echarts/renderers").then(({ CanvasRenderer }) => {
-      use([CanvasRenderer]);
-    });
-  });
+export default defineNuxtPlugin((nuxtApp) => {
+  use([CanvasRenderer]); // Asegura que `CanvasRenderer` está disponible antes de que `VChart` lo requiera.
+
+  nuxtApp.vueApp.component("VChart", VueECharts);
 });

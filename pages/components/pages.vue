@@ -5,20 +5,18 @@ import Todaysprice from '../pages/todaysprice.vue';
 
 <template>
   <div class="container-center">
+    <br>
     <ButtonComponent :text="'Precios de hoy'" :url="'/pages/todaysprice'" />
-
-    <h1>Precios de mañana</h1>
-    <ElectricityPriceTomorrow />
-    <h1>Seleccionar el día</h1>
-    <ElectricityPriceByDate />
-    <h1>BitcoinCalc</h1>
-    <BitcoinCalc />
-
-    <h1>EnergyGenerationStructure</h1>
-    <EnergyGenerationStructure />
-    <h1>TextIntroduction</h1>
-    <TextIntroduction text="EnergyAPP" />
-    <h1>TextAnimation</h1>
-    <TextAnimation text="EnergyAPP" />
+    <br>
+    <ButtonComponent :text="'Precios de mañana'" :url="'/pages/tomorrowsprice'" />
+    <br>
+    <ButtonComponent :text="'Precios por día'" :url="'/pages/pricesperday'" />
+    <br>
+    <ButtonComponent :text="'Calculadora Euro / bitcoin'" :url="'/pages/bitcoincalc'" />
+    <br>
+    <ButtonComponent :text="'Carga de la aplicación'" :url="'/pages/textintroduction'" />
+    <br>
+    <ButtonComponent :text="'Otra carga'" :url="'/pages/textanimation'" />
+    
   </div>
 </template>

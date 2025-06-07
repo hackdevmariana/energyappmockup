@@ -11,12 +11,7 @@
 
     <div v-else>
       <div class="list">
-        <div
-          v-for="(hour, index) in prices"
-          :key="index"
-          :class="getBackgroundColor(hour.value)"
-          class="hour-box"
-        >
+        <div v-for="(hour, index) in prices" :key="index" :class="getBackgroundColor(hour.value)" class="hour-box">
           <span class="hour">{{ hour.hour }}:00</span>
           <span class="mwh">{{ hour.value.toFixed(2) }} €/MWh</span>
           <span class="kwh">{{ (hour.value / 1000).toFixed(5) }} €/kWh</span>
@@ -25,7 +20,11 @@
 
       <!-- Gráfica de precios por horas -->
       <div class="chart-container">
-        <v-chart class="chart" :option="chartOptions" />
+        <!-- <v-chart class="chart" :option="chartOptions" /> -->
+        <client-only>
+          <VChart class="chart" :option="chartOptions" />
+        </client-only>
+
       </div>
     </div>
   </div>

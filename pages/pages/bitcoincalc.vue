@@ -1,0 +1,3 @@
+<template>
+    <BitcoinCalc />
+</template>
