@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import dayjs from "dayjs";
-import "dayjs/locale/es"; 
+import "dayjs/locale/es";
 import GenerationConsumptionInstallation from "~/components/GenerationConsumptionInstallation.vue";
 
-dayjs.locale("es"); 
-const today = dayjs().format("YYYY-MM-DD"); 
+import SemiCircleProgress from "~/components/SemiCircleProgress.vue";
+
+dayjs.locale("es");
+const today = dayjs().format("YYYY-MM-DD");
 const modalOpen = ref(false);
 </script>
 
@@ -13,13 +15,16 @@ const modalOpen = ref(false);
 
 <template>
   <div class="container-center">
-    
+        <SemiCircleProgress :percentage="85" />
 
 
-    
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>
     <EnergyModal :isOpen="modalOpen" :closeModal="() => (modalOpen = false)">
       <h2>Información energética</h2>
+
+
+
+
       <p>Consulta tu consumo eléctrico y ajusta tu configuración.</p>
     </EnergyModal>
 
@@ -49,4 +54,5 @@ const modalOpen = ref(false);
 .open-modal-btn:hover {
   background: #ffaa00;
 }
+
 </style>
