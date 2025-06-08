@@ -15,7 +15,7 @@ const modalOpen = ref(false);
 
 <template>
   <div class="container-center">
-        <SemiCircleProgress :percentage="85" />
+        
 
 
     <button @click="modalOpen = true" class="open-modal-btn">Abrir Modal</button>

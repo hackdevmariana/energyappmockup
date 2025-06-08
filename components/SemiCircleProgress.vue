@@ -1,3 +1,11 @@
+<!--
+
+USAGE:
+
+<SemiCircleProgress :percentage="85" />
+
+-->
+
 <template>
   <div class="progress-container" :style="`--line-color: ${progressColor}`">
     <svg class="progress-svg" viewBox="0 0 200 100">

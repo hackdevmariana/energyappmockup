@@ -1,6 +1,8 @@
 <template>
   <div>
     <br /><br />
+    <h1>SemiCircleProgress</h1>
+    <SemiCircleProgress :percentage="85" />
     <h1>AnimatedContainer</h1>
     <AnimatedContainer topLine="Saldo" quantity="1000" bottomLine="euros" backgroundColor="var(--expenses-color)" />
     <h1>CurrentElectricityPrice</h1>
