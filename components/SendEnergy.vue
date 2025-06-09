@@ -14,6 +14,8 @@
 
         <!-- Acción -->
         <div class="action-area">
+            <input class="amount-input" v-model="value" placeholder="0,0" inputmode="decimal" />
+
             <button class="send-button">Enviar kWh</button>
 
             <!-- Teclado numérico -->
@@ -183,5 +185,20 @@ const avatarInitials = computed(() => {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.amount-input {
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-color);
 }
 </style>

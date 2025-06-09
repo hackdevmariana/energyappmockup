@@ -1,3 +1,3 @@
 <template>
-    <SendEnergy />
+    <SendEnergy name='Pepe Pérez', userName="pepeperez" />
 </template>
