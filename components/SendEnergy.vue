@@ -16,7 +16,8 @@
         <div class="action-area">
             <input class="amount-input" v-model="value" placeholder="0,0" inputmode="decimal" />
 
-            <button class="send-button">Enviar kWh</button>
+            <button class="send-button" @click="sendKwh">Enviar kWh</button>
+
 
             <!-- Teclado numérico -->
             <div class="num-pad">
@@ -34,16 +35,21 @@
 
 <script setup>
 import { computed, ref, defineProps } from 'vue';
+import Swal from 'sweetalert2';
 
 const props = defineProps({
-    userImage: String,
-    name: String,
-    userName: {
-        type: String,
-        required: true,
-    }
-
+  userImage: String,
+  name: String,
+  userName: {
+    type: String,
+    required: true,
+  },
+  availableKwh: {
+    type: Number,
+    required: true,
+  }
 });
+
 
 const value = ref('');
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -76,6 +82,40 @@ const avatarInitials = computed(() => {
 
     return '?'; // Valor por defecto en caso de datos faltantes
 });
+
+
+const sendKwh = () => {
+  const normalized = value.value.replace(',', '.'); // En caso de decimal con coma
+  const amount = parseFloat(normalized);
+
+  if (!value.value || isNaN(amount) || amount <= 0) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Cantidad inválida',
+      text: 'Introduce una cantidad válida de kWh.',
+    });
+    return;
+  }
+
+  if (amount > props.availableKwh) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Saldo insuficiente',
+      text: `Sólo tienes ${props.availableKwh} kWh disponibles.`,
+    });
+    return;
+  }
+
+  // Éxito ficticio
+  Swal.fire({
+    icon: 'success',
+    title: 'kWh enviados',
+    text: `Has enviado ${amount} kWh a @${props.userName}.`,
+    confirmButtonColor: '#4CAF50',
+  });
+
+  value.value = '';
+};
 
 </script>
 
