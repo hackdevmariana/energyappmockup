@@ -19,6 +19,9 @@ import Todaysprice from '../pages/todaysprice.vue';
     <ButtonComponent :text="'Otra carga'" :url="'/pages/textanimation'" />
     <br>
     <ButtonComponent :text="'Productos'" :url="'/pages/products'" />
-
+    <br>
+    <ButtonComponent :text="'Validar PIN'" :url="'/pages/pininput'" />
+    <br>
+    <ButtonComponent :text="'Enviar kWh'" :url="'/pages/sendenergy'" />
   </div>
 </template>
