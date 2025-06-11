@@ -23,5 +23,7 @@ import Todaysprice from '../pages/todaysprice.vue';
     <ButtonComponent :text="'Validar PIN'" :url="'/pages/pininput'" />
     <br>
     <ButtonComponent :text="'Enviar kWh'" :url="'/pages/sendenergy'" />
+    <br>
+    <ButtonComponent :text="'Optimización de compraventa'" :url="'/pages/energyoptimizer'" />
   </div>
 </template>
